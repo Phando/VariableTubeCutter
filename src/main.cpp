@@ -27,51 +27,7 @@
 using namespace std;
 using namespace ace_button;
 
-/////////////////////////
-//     Pin Defines     //
-/////////////////////////
-
-// //TMC2209 Stepper Driver
-// #define TMC_EN  21 //Low to enable motor, high to disable)
-// #define STEP    5
-// #define DIR     6
-// #define MS1     1
-// #define MS2     2
-// #define SPREAD  7
-// #define TMC_TX  17
-// #define TMC_RX  18
-// #define DIAG    16
-// #define INDEX   11
-
-// //PD Trigger (CH224K)
-// #define PG      15  //power good singnal (dont enable stepper untill this is good)
-// #define CFG1    38
-// #define CFG2    48
-// #define CFG3    47
-
-// //Other
-// #define VBUS    4
-// #define NTC     7
-// #define LED1    10
-// #define LED2    12
-// #define SW1     35
-// #define SW2     36
-// #define SW3     37
-// #define AUX1    14
-// #define AUX2    13
-
-// // LIMITS
-// #define LENGTH_INC 30
-// #define LENGTH_MIN 1
-// #define LENGTH_MAX 6000
-
-// #define SPEED_INC 50
-// #define SPEED_MIN 200
-// #define SPEED_MAX 800
-
-////////////////////////////
-// Global Variable Defines //
-////////////////////////////
+// Global Variable Defines
 Preferences prefs;
 Adafruit_seesaw ss;
 seesaw_NeoPixel sspixel = seesaw_NeoPixel(1, SS_NEOPIX, NEO_GRB + NEO_KHZ800);
@@ -187,6 +143,10 @@ void setPrefs(){
 
 
 //-----------------------------------------------------------------------------
+// Note: This is a blocking function but can/will be written as non-blocking
+// in the next version
+//-----------------------------------------------------------------------------
+
 void rotateDegrees(float degrees) {
   // Calculate effective movement (compensate for full rotations)
   float effective_deg = fmod(degrees, 360.0);
