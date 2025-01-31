@@ -39,3 +39,7 @@ The Variable Tube Cutter project provides:
 ### Software
   - A compatible IDE (Visual Studio Code with the PlatformIO extension works great).
   - [PlatformIO](https://platformio.org/) is recommended for building and uploading the firmware.
+
+![cadModel](https://github.com/user-attachments/assets/616a4254-160e-451d-84ff-70f7f15cc7d1)
+
+
